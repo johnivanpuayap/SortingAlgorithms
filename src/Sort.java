@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Sort {
@@ -19,6 +20,22 @@ public class Sort {
             arr.set(j + 1, key);
         }
     }
+    public static void BubbleSort(ArrayList<Integer> arr) {
+        int steps = 1;
+        for(int i = 0; i < arr.size() - 1; i++) {
+           for(int j = 0; j < arr.size() - i - 1; j++) {
+               if(arr.get(j) > arr.get(j+1)) {
+                   Collections.swap(arr, j, j+1);
+                   System.out.println("Step " + steps + ": " + arr);
+                   steps++;
+               }
+           }
+        }
+    }
+
+    public static void BinaryInsertionSort(ArrayList<Integer> arr) {
+
+    }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -32,6 +49,7 @@ public class Sort {
         }
 
         System.out.println("Before: " + arrayList);
+        BubbleSort(arrayList);
         System.out.println("After: " + arrayList);
     }
 }
